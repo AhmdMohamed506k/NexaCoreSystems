@@ -1,0 +1,142 @@
+@import "tailwindcss";
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* NexaCore Systems & Lumora Unified Design Tokens */
+@theme {
+  --font-sans: "Onest", sans-serif;
+  --color-background: #ffffff;
+  --color-foreground: #111111;
+  --color-ink: #0a0a0a;
+  
+  /* Scene Gradients & Hero Tokens */
+  --color-scene-deep: #482518;
+  --color-scene-ember: #8f3e1d;
+  --color-scene-orange: #d96924;
+  --color-scene-gold: #efa04a;
+  --color-scene-copper: #ab5427;
+  --color-scene-glow: #f5b562;
+  
+  --color-muted: #8d8d8d;
+  --color-subtle: #b6b6b6;
+  --color-line: #e6e5e2;
+  --color-border: #e6e5e2;
+  --color-surface: #f1f0ee;
+  --color-surface-2: #e3e2df;
+  --color-accent: #b15f2c;
+  --color-accent-from: #cf8047;
+  --color-accent-to: #97501f;
+  --color-hero-from: #ecebe9;
+  --color-hero-to: #c9c9c9;
+  --color-ring: #b15f2c;
+
+  --radius-pill: 9999px;
+  --radius-card: 2rem;
+  --radius-card-sm: 1.25rem;
+  --radius-control: 0.875rem;
+  --text-watermark: 13rem;
+  --container-shell: 88rem;
+}
+
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+    border-color: var(--color-line);
+  }
+  
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  body {
+    background: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+  
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  button {
+    font: inherit;
+    color: inherit;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:disabled {
+    cursor: not-allowed;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  img {
+    display: block;
+  }
+  
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+      animation: none !important;
+    }
+  }
+}
+
+@utility shell {
+  margin-inline: auto;
+  max-width: var(--container-shell);
+}
+
+/* Side Gradients & Animations for Hero & Studio */
+.side-gradient {
+  background:
+    radial-gradient(ellipse at 16% 56%, var(--color-scene-orange) 0%, transparent 48%),
+    radial-gradient(ellipse at 92% 12%, var(--color-scene-copper) 0%, transparent 54%),
+    radial-gradient(ellipse at 75% 90%, var(--color-scene-ember) 0%, transparent 53%),
+    linear-gradient(135deg, var(--color-scene-deep), var(--color-scene-ember) 48%, var(--color-scene-gold) 100%);
+  background-size: 150% 150%, 170% 170%, 160% 160%, 220% 220%;
+  animation: scene-drift 16s ease-in-out infinite alternate;
+  will-change: background-position, filter;
+}
+
+.side-gradient-reveal {
+  --reveal-x: 50%;
+  --reveal-y: 50%;
+  background:
+    radial-gradient(ellipse at 30% 38%, var(--color-scene-glow) 0%, transparent 44%),
+    radial-gradient(ellipse at 80% 62%, var(--color-scene-orange) 0%, transparent 47%),
+    repeating-radial-gradient(ellipse at 48% 50%, transparent 0 16px, var(--color-scene-gold) 17px 19px, transparent 22px 38px),
+    linear-gradient(140deg, var(--color-scene-copper), var(--color-scene-orange));
+  background-size: 180% 180%, 170% 170%, 140% 140%, 100% 100%;
+  mask-image: radial-gradient(circle 230px at var(--reveal-x) var(--reveal-y), black 5%, transparent 100%);
+  animation: scene-drift 11s ease-in-out infinite alternate-reverse;
+
+  will-change: opacity, background-position;
+}
+
+@keyframes scene-drift {
+  from { background-position: 0% 25%, 100% 0%, 70% 100%, 0% 25%; }
+  to { background-position: 95% 75%, 15% 90%, 0% 15%, 100% 75%; }
+}
+
+/* Rem-based adaptive grid */
+@media (max-width: 1920px) { html { font-size: 0.833333vw; } }
+@media (max-width: 1440px) { html { font-size: 1.111111vw; } }
+@media (max-width: 1024px) { html { font-size: 1.5625vw; } }
+@media (max-width: 640px) { html { font-size: 4.444444vw; } }
