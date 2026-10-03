@@ -68,8 +68,9 @@ A modern, high-performance, full-featured enterprise web application built with 
 
 ```bash
 
-git clone [https://github.com/your-username/your-repo-name.git](https://github.com/your-username/your-repo-name.git)
-cd your-repo-name
+git clone [https://github.com/AhmdMohamed506k/NexaCoreSystems](https://github.com/AhmdMohamed506k/NexaCoreSystems)
+
+cd NexaCoreSystems
 
 ```
 
