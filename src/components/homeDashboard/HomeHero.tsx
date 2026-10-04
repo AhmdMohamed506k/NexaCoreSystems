@@ -29,7 +29,7 @@ export function HomeHero({ user, onNavigate, onNewProject }: { user: User; onNav
 
   return (
     <section id="home" className="hd-hero">
-      <LiquidReveal afterSrc="../../../public/before.jpg"  beforeSrc=".../../../public/after.jpg" brushRadius={123} decay={0.026} />
+      <LiquidReveal afterSrc="/before.jpg"  beforeSrc="/after.jpg" brushRadius={123} decay={0.026} />
 
       <div className="hd-hero-watermark">{user.name}</div>
 

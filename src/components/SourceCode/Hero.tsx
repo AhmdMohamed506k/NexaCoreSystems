@@ -79,7 +79,7 @@ export function Hero() {
   const openModal = useUI((s:any) => s.openModal);
   return (
     <section id="home" className="relative  isolate overflow-hidden rounded-b-card bg-hero-to ">
-      <LiquidReveal   beforeSrc="../../../public/before.jpg"  afterSrc=".../../../public/after.jpg" brushRadius={143} decay={0.016} />
+      <LiquidReveal   beforeSrc="/before.jpg"  afterSrc="/after.jpg" brushRadius={143} decay={0.016} />
       <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b  from-white/35 via-transparent to-white/35" />
 
 
