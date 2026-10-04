@@ -81,7 +81,7 @@ export function PageLoader({ exitUp = true }: PageLoaderProps) {
   return (
     <div
       ref={panel}
-      className="fixed inset-0 z-[120] left-0 flex flex-col items-center justify-center gap-8 rounded-b-card bg-ink text-white"
+      className="fixed inset-0 z-[120] left-0 flex flex-col items-center justify-center gap-8 rounded-[5px] bg-ink text-white"
     >
       <div
         ref={center}
