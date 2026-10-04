@@ -5,20 +5,10 @@ type Props = {
   revealedSrc?: string;
 };
 
-const BASE = "https://api.getlayers.ai/storage/v1/object/public/public/assets/lumora-e8b711fc68";
 
-/**
- * Orange-first hero reveal.
- *
- * The orange image is ALWAYS the foundation. The monochrome image is drawn
- * only inside a soft cursor-sized spotlight, so moving the mouse reveals
- * small local areas instead of painting the whole hero and making it flip
- * between orange and black/white.
- */
-export function LiquidReveal({
-  baseSrc = `${BASE}/hero/before.jpg`,
-  revealedSrc = `${BASE}/hero/after.jpg`,
-}: Props) {
+
+
+export function LiquidReveal({baseSrc = `../../../public/before.jpg`, revealedSrc = `../../../public/after.jpg`,}: Props) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const hostRef = useRef<HTMLDivElement>(null);
 
@@ -141,8 +131,7 @@ export function LiquidReveal({
       targetX = x;
       targetY = y;
 
-      // Start the spotlight exactly where the cursor enters, avoiding a
-      // reveal flying in from the previous cursor position.
+    
       if (!currentX && !currentY) {
         currentX = x;
         currentY = y;
@@ -171,9 +160,7 @@ export function LiquidReveal({
 
   return (
     <div ref={hostRef} className="hd-liquid" aria-hidden="true">
-      {/* This image is the permanent orange foundation. */}
       <img className="hd-liquid-base" src={baseSrc} alt="" />
-      {/* This canvas contains ONLY the local monochrome cursor reveal. */}
       <canvas ref={canvasRef} className="hd-liquid-canvas" />
       <div className="hd-liquid-vignette" />
     </div>

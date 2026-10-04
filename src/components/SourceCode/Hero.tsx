@@ -7,6 +7,8 @@ import { Hover, Reveal, SplitHeading } from "./motion";
 import { PillButton } from "./ui";
 import { ArrowRight, CircleDot, LogoMark, Star } from "./icons";
 
+
+
 const ASSET = "https://api.getlayers.ai/storage/v1/object/public/public/assets/lumora-e8b711fc68";
 const ITEMS = [
   { caption: "Scalable Backend", title: "System Architecture." },
@@ -77,8 +79,11 @@ export function Hero() {
   const openModal = useUI((s:any) => s.openModal);
   return (
     <section id="home" className="relative  isolate overflow-hidden rounded-b-card bg-hero-to ">
-      <LiquidReveal beforeSrc={`${ASSET}/hero/before.jpg`} afterSrc={`${ASSET}/hero/after.jpg`} brushRadius={143} decay={0.016} />
+      <LiquidReveal   beforeSrc="../../../public/before.jpg"  afterSrc=".../../../public/after.jpg" brushRadius={143} decay={0.016} />
       <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b  from-white/35 via-transparent to-white/35" />
+
+
+
       <Reveal gate delay={300} from={{ opacity: 0, y: 20 }} to={{ opacity: 0.4 }} aria-hidden className="pointer-events-none absolute inset-x-0 bottom-28 z-[1] select-none text-center font-bold leading-none text-[length:var(--text-watermark)] text-white/40">
         NexaCore Systems
       </Reveal>

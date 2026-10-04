@@ -18,7 +18,7 @@ function revealHeadline(root: HTMLElement | null) {
 export function AuthScreen() {
 
 
-  const {setLoaderExit, loaderExit} = useAuth();
+  const { setLoaderExit, loaderExit } = useAuth();
   const root = useRef<HTMLDivElement>(null);
   const side = useRef<HTMLElement>(null);
   const form = useRef<HTMLElement>(null);
@@ -28,7 +28,7 @@ export function AuthScreen() {
   const pendingIn = useRef(false);
 
 
-    
+
 
   const place = (m: typeof mode) => {
     if (!side.current || !form.current) return;
@@ -106,11 +106,11 @@ export function AuthScreen() {
 
 
 
-  
+
 
   return (
     <div ref={root} className="relative min-h-[100dvh] w-full overflow-hidden bg-background">
-<PageLoader exitUp={loaderExit} />    
+      <PageLoader exitUp={loaderExit} />
       <SidePanel ref={side} />
       <FormPane ref={form} />
     </div>

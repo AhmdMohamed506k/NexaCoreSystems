@@ -2,7 +2,7 @@ import React from "react";
 import { gsap } from "gsap";
 import { useClock } from "./hooks/useClock";
 import { useGreeting } from "./hooks/useGreeting";
-import { LiquidReveal } from "./LiquidReveal";
+import { LiquidReveal } from "../SourceCode/LiquidReveal";
 import { RevealCard } from "./RevealCard";
 import { ArrowRight, ArrowUpRight, ChevronLeft, ChevronRight, Folder, Message, Plus, Receipt } from "./icons";
 import { carouselProjects } from "./data/welcome";
@@ -29,7 +29,7 @@ export function HomeHero({ user, onNavigate, onNewProject }: { user: User; onNav
 
   return (
     <section id="home" className="hd-hero">
-      <LiquidReveal />
+      <LiquidReveal afterSrc="../../../public/before.jpg"  beforeSrc=".../../../public/after.jpg" brushRadius={123} decay={0.026} />
 
       <div className="hd-hero-watermark">{user.name}</div>
 
